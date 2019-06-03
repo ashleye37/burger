@@ -1,7 +1,8 @@
 -- Creating data for the burger_db database --
-INSERT INTO burgers (name, devoured) VALUES 
-  ("Bacon Cheeseburger", false), 
-  ("Chicken Burger", false),
-  ("Mushroom Burger", false),
-  ("Veggie Cheeseburger", false),
-  ("California Burger", false);
+INSERT INTO burgers (name, devoured) 
+VALUES 
+  ("Bacon Cheeseburger", false, CURRENT_TIMESTAMP), 
+  ("Chicken Burger", false, CURRENT_TIMESTAMP),
+  ("Mushroom Burger", false, CURRENT_TIMESTAMP),
+  ("Veggie Cheeseburger", false, CURRENT_TIMESTAMP),
+  ("California Burger", false, CURRENT_TIMESTAMP);

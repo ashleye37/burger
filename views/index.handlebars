@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="col-sm-5" id="toBeDevoured">
+    <h3> Burgers to be devoured!</h3>
+
+    <!-- Left list: Burgers entered, but not devoured yet -->
+    <div id="not-devoured">
+      <!-- Pass in data from server.js -->
+      <ul class="list-group">
+        {{#each burgers}}
+        {{#unless devoured}}
+        <form action="burger/eat/{{id}}" method="POST">
+          <div class="input-group">
+            <li class="form-control">{{id}}. {{name}}</li>
+            <span class="input-group-btn">
+              <button class="btn btn-success devour-button" type="submit">Devour It!</button>
+            </span>
+          </div>
+        </form>
+        {{/unless}}
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+
+  <div class="col-sm-5" id="devoured">
+
+    <h3>Burgers already devoured!</h3>
+
+    <div>
+      <ul class="list-group">
+        {{#each burgers}}
+        {{#if devoured}}
+        <div class="input-group">
+          <li class="form-control">{{this.id}}. {{this.name}}</li>
+        </div>
+        {{/if}}
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+body {
+  background-image: url("/assets/img/united-squares-negative.png")
+}
+.container {
+  background-color: green;
+  padding-top: 20px;
+}
+
+#burgerHead {
+  text-align: center;
+}
+
+.form-group {
+  text-align: center;
+  padding: 0px 200px 10px 200px;
+}
+
+.btn-secondary {
+  margin-top: 10px;
+}
+
+#toBeDevoured {
+  padding-left: 100px;
+  margin: 0px;
+}
+
+#devoured {
+  padding-left: 100px;
+}
+
+.devoured-button {
+  background-color: royalblue;
+}

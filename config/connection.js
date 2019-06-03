@@ -1,18 +1,26 @@
-// Pull in mysql so that data/table can be used/connected to.
-var mysql = require("mysql");
-// Create connection to mysql.
+var mysql = require('mysql');
 var connection;
 
-if (process.env.JAWSDB_URL) {
+if(process.env.JAWSDB_URL){
   connection = mysql.createConnection(process.env.JAWSDB_URL);
-} else {
+} else{
   connection = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "Sto37*kke",
-    database: "burger_db"
+    host     : 'localhost',
+    user     : 'root',
+    password : 'Sto37*kke',
+    database : 'burgers_db'
   });
 };
 
-connection.connect();
+connection.connect(function(err) {
+  if (err) {
+    console.error('error connecting: ' + err.stack);
+    return;
+  };
+
+  console.log('connected as id ' + connection.threadId);
+
+});
+
 module.exports = connection;
+
