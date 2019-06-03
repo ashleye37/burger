@@ -4,7 +4,7 @@
   "description": "This app is a burger logger using MySQL, Node, Express, Handlebars and a homemade ORM. The app uses Node and MySQL to query and route data in the app, and Handlebars to generate the needed HTML.",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
