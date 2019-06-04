@@ -1,5 +1,5 @@
 -- Creating data for the burger_db database --
-INSERT INTO burgers (name, devoured, createdAt) 
+INSERT INTO burgers (burger_name, devoured, createdAt) 
 VALUES 
   ("Bacon Cheeseburger", false, CURRENT_TIMESTAMP), 
   ("Chicken Burger", false, CURRENT_TIMESTAMP),

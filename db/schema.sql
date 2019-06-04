@@ -6,7 +6,7 @@ USE `burgers_db`;
 CREATE TABLE `burgers`
 (
 	`id`INT NOT NULL AUTO_INCREMENT,
-	`name` VARCHAR(255) NOT NULL,
+	`burger_name` VARCHAR(255) NOT NULL,
 	`devoured` BOOLEAN DEFAULT false,
 	`createdAt` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	PRIMARY KEY (id)
