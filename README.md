@@ -13,5 +13,3 @@ This app is a burger logger using MySQL, Node, Express, Handlebars and a homemad
 - Handlebars
 - Body Parser
 - ORM
-
-## Screenshot
