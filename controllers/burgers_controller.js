@@ -5,14 +5,8 @@ var burger = require('../models/burger.js');
 
 //Setup Routes
 
-// Index Redirect
-router.get('/', function (req, res) 
-{
-  res.redirect('/index');
-});
-
 // Index Page 
-router.get('/index', function (req, res) 
+router.get('/', function (req, res) 
 {
   burger.selectAll(function(data) 
   {
@@ -22,20 +16,27 @@ router.get('/index', function (req, res)
 });
 
 // Create a New Burger
-router.post('/burger/create', function (req, res) 
-{
-  burger.insertOne(req.body.name, function() 
-  {
-    res.redirect('/index');
+router.post('/burgers', function (req, res) {
+  burger.insertOne([
+    "name", "devoured"], [
+    req.body.name, req.body.devoured], function(result) {
+    res.json({id: result.insertId});
   });
 });
 
 // Devour a Burger
-router.post('/burger/eat/:id', function (req, res) 
-{
-  burger.updateOne(req.params.id, function() 
-  {
-    res.redirect('/index');
+router.put('/burgers/:id', function (req, res) {
+  var condition = "id = " + req.params.id;
+
+  burger.updateOne({
+    devoured: true}, 
+    condition, function(result) {
+    if (result.changedRows == 0) {
+      return res.status(404).end();
+    } else {
+      res.status(200).end();
+    }
+    res.redirect('/');
   });
 });
 

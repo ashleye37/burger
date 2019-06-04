@@ -8,9 +8,9 @@
       <ul class="list-group">
         {{#each burgers}}
         {{#unless devoured}}
-        <form action="burger/create/{{id}}" method="POST">
+        <form action="burgers/{{this.id}}?_method=PUT" method="POST">
           <div class="input-group">
-            <li class="form-control">{{id}}. {{name}}</li>
+            <li class="form-control">{{this.id}}. {{this.name}}</li>
             <span class="input-group-btn">
               <button class="btn btn-success devour-button" type="submit">Devour It!</button>
             </span>
@@ -38,4 +38,12 @@
       </ul>
     </div>
   </div>
+
+  <form action="/burgers" method="POST">
+      <div class="form-group">
+        <h3><label for="burgerOrderInput">Burger Order:</label></h3>
+        <input type="text" class="form-control" id="name" placeholder="Enter your burger order here!">
+        <button id="submit-button" type="submit" class="btn btn-secondary">Place Order</button>
+      </div>
+    </form>
 </div>
