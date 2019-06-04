@@ -4,6 +4,8 @@ body {
 .container {
   background-color: green;
   padding-top: 20px;
+  min-height: 100%;
+  overflow: auto;
 }
 
 #burgerHead {
@@ -17,17 +19,14 @@ body {
 
 .btn-secondary {
   margin-top: 10px;
+  margin-bottom: 100px;
 }
 
 #toBeDevoured {
-  padding-left: 100px;
+  padding-left: 200px;
   margin: 0px;
 }
 
 #devoured {
-  padding-left: 100px;
-}
-
-.devoured-button {
-  background-color: royalblue;
+  padding-left: 150px;
 }
